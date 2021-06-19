@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
+import config from '../config'
 import "react-datepicker/dist/react-datepicker.css";
 
 export default class EditExercises extends Component {
@@ -22,7 +23,7 @@ export default class EditExercises extends Component {
     }
 
     componentDidMount(){
-            axios.get('http://localhost:5000/exercises/'+this.props.match.params.id)
+            axios.get(`${config.SERVER_URI}/exercises/`+this.props.match.params.id)
             .then(res => {
                 console.log(res.data);
                 this.setState({
@@ -63,7 +64,7 @@ export default class EditExercises extends Component {
             date: this.state.date
         }
 
-        axios.post('http://localhost:5000/exercises/update/'+this.props.match.params.id, exercise)
+        axios.post(`${config.SERVER_URI}/exercises/update/`+this.props.match.params.id, exercise)
         .then(res=>console.log(res.data))
         .catch(err=>console.log(err));
         
