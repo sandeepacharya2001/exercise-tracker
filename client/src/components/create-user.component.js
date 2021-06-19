@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import config from '../config';
+let config = require('../config');
 export default class CreateUsers extends Component {
 
     constructor(props){

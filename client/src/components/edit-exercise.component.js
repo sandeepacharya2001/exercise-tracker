@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
-import config from '../config'
 import "react-datepicker/dist/react-datepicker.css";
-
+let config = require('../config');
 export default class EditExercises extends Component {
     
     constructor(props){
