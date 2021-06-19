@@ -3,7 +3,7 @@ const configs = {
     SERVER_URI: 'localhost:5000',
   },
   production: {
-    SERVER_URI: 'my-exercise-record.herokuapp.com',
+    SERVER_URI: '',
   },
 };
 
