@@ -7,22 +7,19 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const path = require("path");
-
-
 app.use(cors());
 app.use(express.json());
 
-// if(process.env.NODE_ENV === 'production'){
-//     // ... other app.use middleware 
-//     app.use(express.static(path.join(__dirname, "client/build")))
+if(process.env.NODE_ENV === 'production'){
+    // ... other app.use middleware 
+    app.use(express.static("client/build"))
 
-//     // ...
-//     // Right before your app.listen(), add this:
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.join(__dirname, "client/build/index.html"));
-//     });
-// }
+    // // ...
+    // // Right before your app.listen(), add this:
+    // app.get("*", (req, res) => {
+    //     res.sendFile(path.join(__dirname, "client/build/index.html"));
+    // });
+}
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri,{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}
