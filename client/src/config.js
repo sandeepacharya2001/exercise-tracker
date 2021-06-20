@@ -1,6 +1,6 @@
 const configs = {
   development: {
-    SERVER_URI: 'localhost:5000',
+    SERVER_URI: 'http://localhost:5000',
   },
   production: {
     SERVER_URI: '',
